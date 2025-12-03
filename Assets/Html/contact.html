@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../Css/Contact/contact.css">
+  <link rel="stylesheet" href="../../Assets/Css/Commun/Footer/footer.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <title>Contact</title>
+</head>
+<body>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="../../index.html">Pierre BOURGEOIS DE LAVERGNE</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="../../index.html">À propos</a></li>
+          <li class="nav-item"><a class="nav-link" href="./competences.html">Compétences</a></li>
+          <li class="nav-item"><a class="nav-link" href="./projets.html">Projets</a></li>
+          <li class="nav-item"><a class="nav-link active" href="./contact.html">Contacts</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <div class="intro_main text-center mb-4">
+    <h1 class="mb-4">Contact</h1>
+  </div>
+
+  <div id="encadre" class="shadow-lg">
+    <h5 class="titre">Profil</h5>
+    <div class="profil_columns">
+      <img src="../Images/Contact/Photo.jpg" alt="Photo de profil" class="profile-pic">
+      <div class="texte_profile">
+        <p><i class="fa-solid fa-user"></i> <strong>Prénom :</strong> Pierre</p>
+        <p><i class="fa-solid fa-user"></i> <strong>Nom :</strong> BOURGEOIS DE LAVERGNE</p>
+        <p><i class="fa-solid fa-cake-candles"></i> <strong>Date de naissance :</strong> 15 août 2006</p>
+        <p><i class="fa-solid fa-id-card"></i> <strong>Permis :</strong> A2 véhiculé + B1</p>
+        <p><i class="fa-solid fa-graduation-cap"></i> <strong>Status :</strong> Étudiant en développement web à Bordeaux Ynov Campus</p>
+        <a href="../Fichiers/CV/CV_Pierre_BOURGEOISDELAVERGNE.pdf" download class="btn-cv">
+            📄 Télécharger mon CV
+        </a>
+      </div>
+    </div>
+  </div>
+
+    <!-- Partie Courriel -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>N'hésitez pas à me contacter !</p>
+
+        <form id="contactForm" method="POST">
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom" required placeholder="Votre nom">
+            <input type="hidden" name="name" id="name">
+
+            <label for="email">Adresse courriel :</label>
+            <input type="email" id="email" name="email" required placeholder="exemple@mail.com">
+            <input type="hidden" name="courriel" id="courriel">
+
+            <label for="title">Objet :</label>
+            <input type="text" id="title" name="title" required placeholder="Sujet du message">
+
+            <label for="message">Message :</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Votre message..."></textarea>
+
+            <br>
+
+            <button type="submit">Envoyer</button>
+        </form>
+
+        <p id="formMessage"></p>
+    </section>
+
+</main>
+
+<footer class="bg-primary text-white text-center text-lg-start mt-5">
+  <div class="container p-4">
+    <div class="row">
+      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+        <h5 class="text-uppercase fw-bold">Pierre Bourgeois de Lavergne</h5>
+        <p>
+          Étudiant en développement web.
+        </p>
+      </div>
+
+      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+        <h5 class="text-uppercase fw-bold">Me contacter</h5>
+        <ul class="list-unstyled">
+            <li><i class="fa-solid fa-envelope"></i> <a href="mailto:pierre.bourgeoisdelavergne@ynov.com" id="courriel-footer"> pierre.bourgeoisdelavergne@ynov.com </a></li>
+          <li><i class="fa-solid fa-phone"></i> +33 7 69 88 62 47</li>
+          <li><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/pierre-bourgeois-de-lavergne-525a3b335" target= »_blank class="text-white text-decoration-none">LinkedIn</a></li>
+          <li><i class="fa-brands fa-github"></i> <a href="https://github.com/PierreBDL" target= »_blank class="text-white text-decoration-none">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center p-3 bg-dark">
+    © 2025 Portfolio - Tous droits réservés
+  </div>
+</footer>
+
+
+<!-- Formulaire de contact -->
+
+<script src="../JavaScript/courriel.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

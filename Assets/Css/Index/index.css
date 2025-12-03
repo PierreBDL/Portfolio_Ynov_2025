@@ -1,0 +1,157 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+/* Main */
+main {
+    padding: 50px 10%;
+}
+
+.skills_intro {
+    background: #e6f0ff;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.skills_intro h1 {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.skills_intro p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.skills_grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 30px;
+}
+
+#Ynov, #ESIEA, #JB2B {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 25px 30px;
+    border: none;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#Ynov:hover, #ESIEA:hover, #JB2B:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.titre_ecole {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+.scolaire_img_droite {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+    align-items: center;
+}
+
+.scolaire_img_gauche {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+    align-items: center;
+}
+
+.scolaire_img_droite img, .scolaire_img_gauche img {
+    height: 100px;
+    border-radius: 8px;
+    background: #f0f0f0;
+    padding: 8px;
+}
+
+.texte_ecole p {
+    text-align: justify;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.3rem;
+    margin-top: 40px;
+    color: #333;
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 768px) {
+    main {
+        padding: 30px 5%;
+    }
+
+    .skills_intro {
+        padding: 25px 15px;
+    }
+
+    .skills_intro h1 {
+        font-size: 1.5rem;
+    }
+
+    .skills_intro p {
+        font-size: 1rem;
+    }
+
+    #Ynov, #ESIEA, #JB2B {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .titre_ecole {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+
+    .scolaire_img_droite,
+    .scolaire_img_gauche {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .scolaire_img_droite img,
+    .scolaire_img_gauche img {
+        height: 80px;
+        margin: 0 auto;
+    }
+
+    .texte_ecole p {
+        font-size: 0.95rem;
+        text-align: left;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+        margin-top: 30px;
+    }
+}

@@ -1,0 +1,87 @@
+/* Footer */
+footer {
+    margin-top: 60px;
+}
+
+footer .container {
+    padding: 40px 20px;
+}
+
+footer h5 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+footer p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+footer ul li i {
+    margin-right: 10px;
+    width: 20px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+footer a:hover {
+    opacity: 0.8;
+}
+
+#courriel-footer {
+    color: white;
+    text-decoration: none;
+}
+
+footer .bg-dark {
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 768px) {
+    footer {
+        margin-top: 40px;
+    }
+
+    footer .container {
+        padding: 30px 15px;
+    }
+
+    footer h5 {
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+    }
+
+    footer p {
+        font-size: 0.95rem;
+    }
+
+    footer ul li {
+        font-size: 0.95rem;
+        margin-bottom: 8px;
+    }
+
+    footer .row > div {
+        margin-bottom: 20px;
+    }
+
+    footer .bg-dark {
+        padding: 15px;
+        font-size: 0.85rem;
+    }
+}
