@@ -2,7 +2,6 @@ html, body {
     padding: 0;
     margin: 0;
     font-family: "Segoe UI", Arial, sans-serif;
-    background-color: #f9f9f9;
 }
 
 /* Main */
@@ -11,23 +10,19 @@ main {
 }
 
 .skills_intro {
-    background: #e6f0ff;
     padding: 30px 20px;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     text-align: center;
     margin-bottom: 40px;
 }
 
 .skills_intro h1 {
     font-size: 2rem;
-    color: #007bff;
     margin-bottom: 10px;
 }
 
 .skills_intro p {
     font-size: 1.1rem;
-    color: #555;
 }
 
 .skills_grid {
@@ -40,35 +35,30 @@ main {
 /* Séparateur */
 #trait {
     width: 2px;
-    background-color: #ccc;
+    background-color: var(--border-color);
     justify-self: center;
     height: 100%;
     min-height: 200px;
 }
 
 .skill_card {
-    background-color: #ffffff;
     border-radius: 12px;
     padding: 25px 30px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill_card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
 }
 
 /* Titres et textes */
 .skill_card h3 {
     font-size: 1.4rem;
-    color: #007bff;
     margin-bottom: 15px;
 }
 
 .skill_card p {
     font-size: 1rem;
-    color: #555;
     line-height: 1.6;
 }
 

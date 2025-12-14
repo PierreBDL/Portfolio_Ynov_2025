@@ -78,4 +78,35 @@ fatal: not a git repository (or any of the parent directories): .git
 J'ai bien clone mon repo mais le readme qui aurait dû être là est absent. De plus, il n'y a pas de fichier .git ce qui est bizarre alors que j'ai clone le repo.
 ```
 
+```
+Afin de permettre une diversité dans la navigation du portfolio, je veux que tu me rajoute un bouton dans le header qui permettra de passer du mod sombre à clair et inversement. Je veux que tu adapte tous les css et que ce mode soit, ci-possible, conservé entre les pages via un paramètre dans l'url par exemple. Modifie également les autre html et css en plus de celui que je te donne.
+```
+
+```
+C'est parfait mais est ce que c'est possible de faire en sorte que le mini-moment de thème clair au chargement de la page ne soit pas présent quand on est en mode sombre. ça fait un petit flash lumineux désagréable.
+```
+
+```
+Je voudrais changer le format de ma page projet.html : ce visuel de flèche sur laquelle il faut cliqué pour afficher les projets ne me convient pas. Je voudrais le remplacer par un caroussel qui défile automatiquement ou via des flèches et qui permet de faire défiler les projet. Il y aura une slide avec le titre (projet ESIEA, projet Ynov, projet personnels) et après après chacun des titre, il y aura les projets associé en gardant ce format de carte.
+```
+
+```
+J'ai oublié de te dire que je veux qu'un projet pas slide. Par exemple :
+Diapo 1 : Projet ESIEA
+Diapo 2 : Premier Semestre : Créer un site web statique
+Diapo 3 :Second Semestre : Améliorer le site avec une interface administrateur
+Etc...
+Diapo N : Projet Ynov 
+Diapo N+1 : Premier Semestre, projet RED : Réaliser un RPG en CLI
+Etc
+```
+
+```
+Ok, mainetenant, fais juste en sorte que le caroussel soit aligné verticalement car quand le texte est court, le caroussel donne l'impression d'être top en haut. Fais également en sorte que le caroussel recommence au début quand on arrive à la dernière diapo. Explique moi aussi comment tu as fais dans les moindres détails car je ne vois pas de js.
+```
+
+```
+La boucle infinie ne fonctionne pas : quand je suis sur le diapo de mon projet perso, je ne peux plus cliqué sur les boutons. Pareil quand, depuis la première diapo, je vais "en arrière", je reste bloqué. Je pense que ça a un lien avec le fait que les petits points en bas de la page pour nous montrer notre position dans le caroussel est fonctionnel pour toutes les diapo sauf la fdernière.
+```
+
 

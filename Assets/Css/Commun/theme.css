@@ -1,0 +1,195 @@
+/* Variables de couleurs pour le thème clair (par défaut) */
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f9f9f9;
+    --bg-card: #ffffff;
+    --bg-intro: #e6f0ff;
+    --text-primary: #333333;
+    --text-secondary: #555555;
+    --border-color: #e0e0e0;
+    --shadow-light: rgba(0,0,0,0.08);
+    --shadow-medium: rgba(0,0,0,0.12);
+    --accent-color: #007bff;
+    --navbar-bg: #007bff;
+    --footer-bg: #007bff;
+    --footer-dark-bg: #212529;
+}
+
+/* Variables de couleurs pour le thème sombre */
+[data-theme="dark"] {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #121212;
+    --bg-card: #2d2d2d;
+    --bg-intro: #1e3a5f;
+    --text-primary: #e0e0e0;
+    --text-secondary: #b0b0b0;
+    --border-color: #404040;
+    --shadow-light: rgba(0,0,0,0.3);
+    --shadow-medium: rgba(0,0,0,0.5);
+    --accent-color: #4da6ff;
+    --navbar-bg: #1e3a5f;
+    --footer-bg: #1e3a5f;
+    --footer-dark-bg: #0d1117;
+}
+
+/* Application des variables */
+html, body {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Bouton de toggle du thème */
+#theme-toggle {
+    background: none;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+}
+
+#theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: white;
+    transform: scale(1.05);
+}
+
+#theme-toggle i {
+    font-size: 1.1rem;
+}
+
+/* Navbar */
+.navbar.bg-primary {
+    background-color: var(--navbar-bg) !important;
+}
+
+/* Footer */
+footer.bg-primary {
+    background-color: var(--footer-bg) !important;
+}
+
+footer .bg-dark {
+    background-color: var(--footer-dark-bg) !important;
+}
+
+/* Cards et conteneurs */
+.skills_intro {
+    background: var(--bg-intro);
+    color: var(--text-primary);
+}
+
+.skills_intro h1 {
+    color: var(--accent-color);
+}
+
+.skills_intro p {
+    color: var(--text-secondary);
+}
+
+#Ynov, #ESIEA, #JB2B {
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+    box-shadow: 0 6px 20px var(--shadow-light);
+}
+
+#Ynov:hover, #ESIEA:hover, #JB2B:hover {
+    box-shadow: 0 8px 25px var(--shadow-medium);
+}
+
+.titre_ecole {
+    color: var(--accent-color);
+}
+
+/* Éléments spécifiques aux pages */
+.skill_card {
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+    box-shadow: 0 6px 20px var(--shadow-light);
+}
+
+.skill_card:hover {
+    box-shadow: 0 8px 25px var(--shadow-medium);
+}
+
+#encadre {
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+}
+
+.intro_main {
+    background: var(--bg-intro);
+    color: var(--text-primary);
+}
+
+.intro_main h1 {
+    color: var(--accent-color);
+}
+
+/* Formulaire */
+.form-control {
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .form-control {
+    background-color: #3a3a3a;
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .form-control:focus {
+    background-color: #3a3a3a;
+    color: var(--text-primary);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.2rem rgba(77, 166, 255, 0.25);
+}
+
+/* Boutons */
+.btn-primary {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+[data-theme="dark"] .btn-primary:hover {
+    background-color: #357abd;
+    border-color: #357abd;
+}
+
+/* Cards Bootstrap */
+.card {
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+.card-body {
+    background-color: var(--bg-card);
+}
+
+/* Images en mode sombre */
+[data-theme="dark"] img {
+    opacity: 0.9;
+}
+
+[data-theme="dark"] .profile-pic {
+    opacity: 1;
+}
+
+/* Responsive pour le bouton de thème */
+@media (max-width: 991px) {
+    #theme-toggle {
+        margin: 10px 15px;
+    }
+}

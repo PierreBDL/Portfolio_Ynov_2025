@@ -3,8 +3,6 @@ html, body {
     padding: 0;
     margin: 0;
     font-family: "Segoe UI", Arial, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
 }
 
 /* Main */
@@ -14,79 +12,137 @@ main {
 
 /* Intro du main */
 .intro_main {
-    background: #e6f0ff;
     padding: 40px 20px;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     text-align: center;
     margin-bottom: 40px;
 }
 
 .intro_main h1 {
     font-size: 2rem;
-    color: #007bff;
     margin-bottom: 10px;
 }
 
 .intro_main p {
     font-size: 1.1rem;
-    color: #333;
 }
 
-/* Boutons de collapse */
-#boutons_projets {
-    display: grid;
-    gap: 15px;
+/* Carousel */
+.carousel {
+    margin-bottom: 50px;
 }
 
-#boutons_projets button.btn {
+.carousel-content {
+    padding: 40px 20px;
+    min-height: 500px;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    background-color: #007bff;
-    border: none;
-    color: #fff;
-    padding: 12px 20px;
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    cursor: pointer;
+}
+
+.carousel-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    text-align: center;
+    margin-bottom: 30px;
     width: 100%;
 }
 
-#boutons_projets button.btn:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+.carousel-title-main {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    text-align: center;
+    animation: fadeIn 0.5s ease-in;
+    width: 100%;
 }
 
-/* Animation icône flèche */
-button.btn i {
-    transition: transform 0.3s ease;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
-button.btn.collapsed i {
-    transform: rotate(0deg);
+.projets-grid {
+    display: grid;
+    gap: 25px;
+    width: 100%;
 }
 
-button.btn:not(.collapsed) i {
-    transform: rotate(180deg);
+.card {
+    width: 100%;
+}
+
+/* Indicateurs du carousel */
+.carousel-indicators {
+    margin-bottom: 30px;
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    opacity: 0.5;
+    border: none;
+}
+
+.carousel-indicators .active {
+    opacity: 1;
+    background-color: var(--accent-color);
+}
+
+/* Contrôles du carousel */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 60px;
+    height: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.carousel-control-prev {
+    left: -30px;
+}
+
+.carousel-control-next {
+    right: -30px;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 30px;
+    height: 30px;
 }
 
 /* Cartes */
 .card {
-    background-color: #ffffff;
     border-radius: 12px;
     padding: 25px 30px;
     border: none;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
     margin-top: 15px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
 }
 
 /* Titres */
@@ -95,14 +151,12 @@ button.btn:not(.collapsed) i {
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 20px;
-    color: #007bff;
 }
 
 .titre_projet {
     font-size: 1.2rem;
     margin-bottom: 15px;
     font-weight: 600;
-    color: #333;
 }
 
 /* Contenu projet */
@@ -118,20 +172,20 @@ button.btn:not(.collapsed) i {
     margin: 0;
     font-size: 1rem;
     line-height: 1.6;
-    color: #555;
     text-align: justify;
 }
 
 .contenu_projet img {
     height: 80px;
     border-radius: 8px;
-    background: #f0f0f0;
+    background: var(--bg-card);
     padding: 8px;
+    border: 1px solid var(--border-color);
 }
 
 /* Liens GitHub, etc. */
 .contenu_projet a {
-    color: #007bff;
+    color: var(--accent-color);
     text-decoration: none;
     transition: opacity 0.3s ease;
 }
@@ -159,23 +213,44 @@ button.btn:not(.collapsed) i {
         font-size: 1rem;
     }
 
-    #boutons_projets {
-        gap: 12px;
+    .carousel-content {
+        padding: 20px 10px;
+        min-height: 400px;
     }
 
-    #boutons_projets button.btn {
-        font-size: 0.95rem;
-        padding: 10px 15px;
+    .carousel-title {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .carousel-title-main {
+        font-size: 2.2rem;
+        min-height: 300px;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 45px;
+        height: 45px;
+    }
+
+    .carousel-control-prev {
+        left: -10px;
+    }
+
+    .carousel-control-next {
+        right: -10px;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 20px;
+        height: 20px;
     }
 
     .card {
         padding: 20px;
         margin-top: 12px;
-    }
-
-    .titre_ecole {
-        font-size: 1.3rem;
-        margin-bottom: 15px;
     }
 
     .titre_projet {
@@ -198,4 +273,6 @@ button.btn:not(.collapsed) i {
         font-size: 0.95rem;
         text-align: left;
     }
+}
+
 }

@@ -3,10 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../Css/Competences/competences.css">
-  <link rel="stylesheet" href="../../Assets/Css/Commun/Footer/footer.css">
+  <script>
+    // Appliquer le thème immédiatement pour éviter le flash
+    (function() {
+      const theme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../Css/Commun/theme.css">
+  <link rel="stylesheet" href="../Css/Competences/competences.css">
+  <link rel="stylesheet" href="../../Assets/Css/Commun/Footer/footer.css">
   <title>Compétences</title>
 </head>
 <body>
@@ -24,6 +32,11 @@
           <li class="nav-item"><a class="nav-link active" href="./competences.html">Compétences</a></li>
           <li class="nav-item"><a class="nav-link" href="./projets.html">Projets</a></li>
           <li class="nav-item"><a class="nav-link" href="./contact.html">Contacts</a></li>
+          <li class="nav-item">
+            <button id="theme-toggle" class="ms-2">
+              <i id="theme-icon" class="fa-solid fa-moon"></i>
+            </button>
+          </li>
         </ul>
       </div>
     </div>
@@ -42,7 +55,9 @@
         <strong>Front-end:</strong> HTML, CSS, JavaScript, JSON <br />
         <strong>Back-end:</strong> PHP, Golang <br />
         <strong>Base de données (SGBDR):</strong> SQL <br />
-        <strong>Frameworks:</strong> Bootstrap
+        <strong>Frameworks:</strong> Bootstrap <br />
+        <strong>Stockage en ligne:</strong> Git, GitHub, Gitea <br />
+        <strong>Autre:</strong> LAMP
       </p>
     </div>
 
@@ -92,5 +107,6 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../JavaScript/theme.js"></script>
 </body>
 </html>

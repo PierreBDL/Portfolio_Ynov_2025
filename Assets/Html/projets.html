@@ -3,10 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../Css/Projets/projets.css">
-    <link rel="stylesheet" href="../../Assets/Css/Commun/Footer/footer.css">
+    <script>
+        // Appliquer le thème immédiatement pour éviter le flash
+        (function() {
+            const theme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../Css/Commun/theme.css">
+    <link rel="stylesheet" href="../Css/Projets/projets.css">
+    <link rel="stylesheet" href="../../Assets/Css/Commun/Footer/footer.css">
     <title>Projet</title>
 </head>
 <body>
@@ -24,6 +32,11 @@
                     <li class="nav-item"><a class="nav-link" href="./competences.html">Compétences</a></li>
                     <li class="nav-item"><a class="nav-link active" href="./projets.html">Projets</a></li>
                     <li class="nav-item"><a class="nav-link" href="./contact.html">Contacts</a></li>
+                    <li class="nav-item">
+                        <button id="theme-toggle" class="ms-2">
+                            <i id="theme-icon" class="fa-solid fa-moon"></i>
+                        </button>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -36,163 +49,284 @@
         <h1>Projets</h1>
     </div>
 
+    <!-- Carousel des projets -->
+    <div id="projetsCarousel" class="carousel slide" data-bs-ride="false" data-bs-wrap="true">
+        <!-- Indicateurs -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#projetsCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+            <button type="button" data-bs-target="#projetsCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#projetsCarousel" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#projetsCarousel" data-bs-slide-to="3"></button>
+            <button type="button" data-bs-target="#projetsCarousel" data-bs-slide-to="4"></button>
+            <button type="button" data-bs-target="#projetsCarousel" data-bs-slide-to="5"></button>
+            <button type="button" data-bs-target="#projetsCarousel" data-bs-slide-to="6"></button>
+            <button type="button" data-bs-target="#projetsCarousel" data-bs-slide-to="7"></button>
+            <button type="button" data-bs-target="#projetsCarousel" data-bs-slide-to="8"></button>
+            <button type="button" data-bs-target="#projetsCarousel" data-bs-slide-to="9"></button>
+            <button type="button" data-bs-target="#projetsCarousel" data-bs-slide-to="10"></button>
+            <button type="button" data-bs-target="#projetsCarousel" data-bs-slide-to="11"></button>
+        </div>
 
-    <div id="boutons_projets">
+        <!-- Contenu du carousel -->
+        <div class="carousel-inner">
+            <!-- Slide 1: Titre Projets ESIEA -->
+            <div class="carousel-item active">
+                <div class="carousel-content">
+                    <h2 class="carousel-title-main">Projets ESIEA</h2>
+                </div>
+            </div>
 
-        <button class="btn btn-primary d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#ESIEA">
-            <span class="me-2">Projets ESIEA</span>
-            <i class="fa-solid fa-chevron-down"></i>
-        </button>
-
-        <div class="collapse mt-3" id="ESIEA">
-            <div class="card card-body">
-                <h5 class="titre_ecole"> ESIEA Campus Agen(47) </h5>
-                <div classe="projets_ESIEA">
-                    <div class="projet">
-                        <h5 class="titre_projet">Premier Semestre, projet informatique : Créer un site web statique</h5>
-                        <div class="contenu_projet">
-                            <div class="texte_projet">
-                                <p>
-                                    Durant le premier semestre à l'ESIEA (de septembre 2024 à mars 2025),
-                                    nous devions réaliser un site web statique pour l'association du Centre Jean Pouzet.
-                                    Cette association propose des colonies de vacances et un gîte dans les Pyrénées.
-                                    Ce site n'est pas publié sur internet (02/10/25). <br />
-                                    <strong>Technologies</strong> : HTML, CSS, JavaScript.
-                                </p>
+            <!-- Slide 2: Projet ESIEA 1 -->
+            <div class="carousel-item">
+                <div class="carousel-content">
+                    <h2 class="carousel-title">Projets ESIEA</h2>
+                    <div class="card card-body">
+                        <div class="projet">
+                            <h5 class="titre_projet">Premier Semestre : Créer un site web statique</h5>
+                            <div class="contenu_projet">
+                                <div class="texte_projet">
+                                    <p>
+                                        Durant le premier semestre à l'ESIEA (de septembre 2024 à mars 2025),
+                                        nous devions réaliser un site web statique pour l'association du Centre Jean Pouzet.
+                                        Cette association propose des colonies de vacances et un gîte dans les Pyrénées.
+                                        Ce site n'est pas publié sur internet (02/10/25). <br />
+                                        <strong>Technologies</strong> : HTML, CSS, JavaScript.
+                                    </p>
+                                </div>
+                                <img src="../../Assets/Images/Index/Logo%20Esiea%20-%20blanc%20fond%20bleu.png" alt="Logo ESIEA">
                             </div>
-                            <img src="../../Assets/Images/Index/Logo%20Esiea%20-%20blanc%20fond%20bleu.png" alt="Logo ESIEA">
                         </div>
                     </div>
                 </div>
             </div>
 
-            <br />
-
-            <div class="card card-body">
-                <h5 class="titre_ecole"> ESIEA Campus Agen(47) </h5>
-                <div classe="projets_ESIEA">
-                    <div class="projet">
-                        <h5 class="titre_projet">Second Semestre, projet informatique : Améliorer le site de semestre 1 avec une interface administrateur</h5>
-                        <div class="contenu_projet">
-                            <div class="texte_projet">
-                                <p>
-                                    Durant le second semestre à l'ESIEA (de mars 2025 à juillet 2026),
-                                    nous devions reprendre le site de semestre 1 et y implanter une interface administrateur
-                                    sécurisée et une base de donnée pour effectuer des modifications.
-                                    Ce site n'est pas publié sur internet (02/10/25). <br />
-                                    <strong>Technologies</strong> : HTML, CSS, JavaScript, PHP, MySQL <br />
-                                    <strong>Frameworks</strong> : Bootstrap, sweetalert
-                                </p>
+            <!-- Slide 3: Projet ESIEA 2 -->
+            <div class="carousel-item">
+                <div class="carousel-content">
+                    <h2 class="carousel-title">Projets ESIEA</h2>
+                    <div class="card card-body">
+                        <div class="projet">
+                            <h5 class="titre_projet">Second Semestre : Améliorer le site avec une interface administrateur</h5>
+                            <div class="contenu_projet">
+                                <div class="texte_projet">
+                                    <p>
+                                        Durant le second semestre à l'ESIEA (de mars 2025 à juillet 2026),
+                                        nous devions reprendre le site de semestre 1 et y implanter une interface administrateur
+                                        sécurisée et une base de donnée pour effectuer des modifications.
+                                        Ce site n'est pas publié sur internet (02/10/25). <br />
+                                        <strong>Technologies</strong> : HTML, CSS, JavaScript, PHP, MySQL <br />
+                                        <strong>Frameworks</strong> : Bootstrap, sweetalert
+                                    </p>
+                                </div>
+                                <img src="../../Assets/Images/Index/Logo%20Esiea%20-%20blanc%20fond%20bleu.png" alt="Logo ESIEA">
                             </div>
-                            <img src="../../Assets/Images/Index/Logo%20Esiea%20-%20blanc%20fond%20bleu.png" alt="Logo ESIEA">
                         </div>
                     </div>
                 </div>
             </div>
 
-            <br />
-
-            <div class="card card-body">
-                <h5 class="titre_ecole"> ESIEA Campus Agen(47) </h5>
-                <div classe="projets_ESIEA">
-                    <div class="projet">
-                        <h5 class="titre_projet">Projet Infrastructure et réseaux : Héberger les deux sites avec LAMP</h5>
-                        <div class="contenu_projet">
-                            <div class="texte_projet">
-                                <p>
-                                    Durant les cours d'infrastructure et réseaux, nous devions héberger les sites de semestre 1 et 2
-                                    sur les serveurs de l'école basés sur LAMP. <br />
-                                    <strong>Technologies</strong> : Apache 2, MariaDB, SSH <br />
-                                </p>
+            <!-- Slide 4: Projet ESIEA 3 -->
+            <div class="carousel-item">
+                <div class="carousel-content">
+                    <h2 class="carousel-title">Projets ESIEA</h2>
+                    <div class="card card-body">
+                        <div class="projet">
+                            <h5 class="titre_projet">Infrastructure et réseaux : Héberger les sites avec LAMP</h5>
+                            <div class="contenu_projet">
+                                <div class="texte_projet">
+                                    <p>
+                                        Durant les cours d'infrastructure et réseaux, nous devions héberger les sites de semestre 1 et 2
+                                        sur les serveurs de l'école basés sur LAMP. <br />
+                                        <strong>Technologies</strong> : Apache 2, MariaDB, SSH
+                                    </p>
+                                </div>
+                                <img src="../../Assets/Images/Index/Logo%20Esiea%20-%20blanc%20fond%20bleu.png" alt="Logo ESIEA">
                             </div>
-                            <img src="../../Assets/Images/Index/Logo%20Esiea%20-%20blanc%20fond%20bleu.png" alt="Logo ESIEA">
                         </div>
                     </div>
                 </div>
             </div>
 
-            <br />
-
-            <div class="card card-body">
-                <h5 class="titre_ecole"> ESIEA Campus Agen(47) </h5>
-                <div classe="projets_ESIEA">
-                    <div class="projet">
-                        <h5 class="titre_projet">Projet de Formation Humaine de semestre 1 : Réaliser des maquettes pour la communication print de EVAD</h5>
-                        <div class="contenu_projet">
-                            <div class="texte_projet">
-                                <p>
-                                    Durant le semestre 1, j'ai été désigné comme chef d'un groupe de trois personnes afin de réaliser la
-                                    communnication print d'EVAD connect. <br />
-                                    EVAD (Ecosystème Vivant Autonome & Décentralisé) est une start-up agenaise qui a pour objectif de
-                                    sensibiliser les entreprises et la population sur l'importance des écolieux notamment avec
-                                    un serveur Minecraft et la construction de leurs propres écolieux. <br />
-                                    <strong>Livrables</strong> : <br /> 1 Affiche professionnelle (promouvoir EVAD) <br />
-                                                                 1 Affiche pour les jeunes (promouvoir le serveur Minecraft auprès des jeunes) <br />
-                                                                 1 dépliant (triptyque) professionnel (promouvoir EVAD) <br />
-                                                                 1 dépliant (triptyque) pour les jeunes (promouvoir le serveur Minecraft auprès des jeunes) <br />
-                                                                 2 modèles de carte de visite (carrée et rectangulaire) <br />
-                                </p>
+            <!-- Slide 5: Projet ESIEA 4 -->
+            <div class="carousel-item">
+                <div class="carousel-content">
+                    <h2 class="carousel-title">Projets ESIEA</h2>
+                    <div class="card card-body">
+                        <div class="projet">
+                            <h5 class="titre_projet">Formation Humaine S1 : Maquettes pour la communication print de EVAD</h5>
+                            <div class="contenu_projet">
+                                <div class="texte_projet">
+                                    <p>
+                                        Durant le semestre 1, j'ai été désigné comme chef d'un groupe de trois personnes afin de réaliser la
+                                        communnication print d'EVAD connect. <br />
+                                        EVAD (Ecosystème Vivant Autonome & Décentralisé) est une start-up agenaise qui a pour objectif de
+                                        sensibiliser les entreprises et la population sur l'importance des écolieux notamment avec
+                                        un serveur Minecraft et la construction de leurs propres écolieux. <br />
+                                        <strong>Livrables</strong> : <br /> 1 Affiche professionnelle (promouvoir EVAD) <br />
+                                                                     1 Affiche pour les jeunes (promouvoir le serveur Minecraft auprès des jeunes) <br />
+                                                                     1 dépliant (triptyque) professionnel (promouvoir EVAD) <br />
+                                                                     1 dépliant (triptyque) pour les jeunes (promouvoir le serveur Minecraft auprès des jeunes) <br />
+                                                                     2 modèles de carte de visite (carrée et rectangulaire)
+                                    </p>
+                                </div>
+                                <img src="../../Assets/Images/Index/Logo%20Esiea%20-%20blanc%20fond%20bleu.png" alt="Logo ESIEA">
                             </div>
-                            <img src="../../Assets/Images/Index/Logo%20Esiea%20-%20blanc%20fond%20bleu.png" alt="Logo ESIEA">
                         </div>
                     </div>
                 </div>
             </div>
 
-            <br />
-
-            <div class="card card-body">
-                <h5 class="titre_ecole"> ESIEA Campus Agen(47) </h5>
-                <div classe="projets_ESIEA">
-                    <div class="projet">
-                        <h5 class="titre_projet">Projet de Formation Humaine de semestre 2 : Donner un cours pour EVAD auprès de BNP Paribas d'Agen</h5>
-                        <div class="contenu_projet">
-                            <div class="texte_projet">
-                                <p>
-                                    Durant le semestre 2, nous avons réalisé un cours sur les ODD, la RSE, l'IA durable, le SolarPunk
-                                    et sa différence avec le CyberPunk auprès de BNP Paribas d'Agen pour EVAD connect. <br />
-                                    EVAD (Ecosystème Vivant Autonome & Décentralisé) est une start-up agenaise qui a pour objectif de
-                                    sensibiliser les entreprises et la population sur l'importance des écolieux notamment avec
-                                    un serveur Minecraft et la construction de leurs propres écolieux. <br />
-                                    <strong>Livrables</strong> : <br /> 1 diaporama <br />
-                                    1 Syllabus <br />
-                                    6 évaluations type Kahoot <br />
-                                </p>
+            <!-- Slide 6: Projet ESIEA 5 -->
+            <div class="carousel-item">
+                <div class="carousel-content">
+                    <h2 class="carousel-title">Projets ESIEA</h2>
+                    <div class="card card-body">
+                        <div class="projet">
+                            <h5 class="titre_projet">Formation Humaine S2 : Cours pour EVAD auprès de BNP Paribas d'Agen</h5>
+                            <div class="contenu_projet">
+                                <div class="texte_projet">
+                                    <p>
+                                        Durant le semestre 2, nous avons réalisé un cours sur les ODD, la RSE, l'IA durable, le SolarPunk
+                                        et sa différence avec le CyberPunk auprès de BNP Paribas d'Agen pour EVAD connect. <br />
+                                        EVAD (Ecosystème Vivant Autonome & Décentralisé) est une start-up agenaise qui a pour objectif de
+                                        sensibiliser les entreprises et la population sur l'importance des écolieux notamment avec
+                                        un serveur Minecraft et la construction de leurs propres écolieux. <br />
+                                        <strong>Livrables</strong> : <br /> 1 diaporama <br />
+                                        1 Syllabus <br />
+                                        6 évaluations type Kahoot
+                                    </p>
+                                </div>
+                                <img src="../../Assets/Images/Index/Logo%20Esiea%20-%20blanc%20fond%20bleu.png" alt="Logo ESIEA">
                             </div>
-                            <img src="../../Assets/Images/Index/Logo%20Esiea%20-%20blanc%20fond%20bleu.png" alt="Logo ESIEA">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 7: Titre Projets Ynov -->
+            <div class="carousel-item">
+                <div class="carousel-content">
+                    <h2 class="carousel-title-main">Projets Ynov</h2>
+                </div>
+            </div>
+
+            <!-- Slide 8: Projet Ynov 1 -->
+            <div class="carousel-item">
+                <div class="carousel-content">
+                    <h2 class="carousel-title">Projets Ynov</h2>
+                    <div class="card card-body">
+                        <div class="projet">
+                            <h5 class="titre_projet">Premier Semestre, projet RED : Réaliser un RPG en CLI</h5>
+                            <div class="contenu_projet">
+                                <div class="texte_projet">
+                                    <p>
+                                        Entre les jeudis 11 et 18 septembre, par groupe de deux, nous devions réaliser un jeu de type
+                                        RPG uniquement en CLI avec le langage Golang utilisé notamment par Google. <br />
+                                        <strong>Technologies</strong> : Golang. <br />
+                                        Lien GitHub : <a href="https://github.com/PierreBDL/Projet_Red_MY_SPELL_ACADEMIA" target="_blank">https://github.com/PierreBDL/Projet_Red_MY_SPELL_ACADEMIA</a>
+                                    </p>
+                                </div>
+                                <img src="../../Assets/Images/Index/logo_ynov_campus.svg" alt="Logo Ynov">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 9: Projet Ynov 2 -->
+            <div class="carousel-item">
+                <div class="carousel-content">
+                    <h2 class="carousel-title">Projets Ynov</h2>
+                    <div class="card card-body">
+                        <div class="projet">
+                            <h5 class="titre_projet">Premier Semestre : Power 4 en ligne</h5>
+                            <div class="contenu_projet">
+                                <div class="texte_projet">
+                                    <p>
+                                        Durant 40 heures, entre le 6 octobre et le 26 novembre 2025, j'ai réalisé un site web responsive en
+                                        HTML et CSS uniquement pour le côté client (Front-end) et golang pour la partie serveur
+                                        (Back-end). <br /> 
+                                        Le but : pouvoir personaliser les deux joueurs, la difficulté (influe sur la taille des
+                                        grilles) et les couleurs avec pour objectif de jouer au Puissance 4. <br />
+                                        <strong>Technologies</strong> : HTML, CSS, Golang. <br />
+                                        Lien GitHub : <a href="https://github.com/PierreBDL/Power" target="_blank">https://github.com/PierreBDL/Power</a>
+                                    </p>
+                                </div>
+                                <img src="../../Assets/Images/Index/logo_ynov_campus.svg" alt="Logo Ynov">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 10: Projet Ynov 3 -->
+            <div class="carousel-item">
+                <div class="carousel-content">
+                    <h2 class="carousel-title">Projets Ynov</h2>
+                    <div class="card card-body">
+                        <div class="projet">
+                            <h5 class="titre_projet">Premier Semestre : Groupi-Tracker</h5>
+                            <div class="contenu_projet">
+                                <div class="texte_projet">
+                                    <p>
+                                        Durant 36 heures, entre le 1 décembre et le 13 janvier 2025, j'ai réalisé un site web responsive en
+                                        HTML et CSS et JavaScript pour le côté client (Front-end) et golang pour la partie serveur
+                                        (Back-end) et la connexion à l'API. <br />
+                                        Le but : pouvoir récupérer des groupes de musiques, leurs membres, leurs prochains concerts et d'autres
+                                        information depuis une API et les afficher dynamiquement sur un site responsive. Il doit également être
+                                        possible de rechercher un groupe grâce à une barre de recherche et grâce à des filtres. <br />
+                                        <strong>Technologies</strong> : HTML, CSS, Golang. <br />
+                                        Lien GitHub : <a href="#" target="_blank">#</a>
+                                    </p>
+                                </div>
+                                <img src="../../Assets/Images/Index/logo_ynov_campus.svg" alt="Logo Ynov">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 11: Titre Projets Personnels -->
+            <div class="carousel-item">
+                <div class="carousel-content">
+                    <h2 class="carousel-title-main">Projets Personnels</h2>
+                </div>
+            </div>
+
+            <!-- Slide 12: Projet Perso 1 -->
+            <div class="carousel-item">
+                <div class="carousel-content">
+                    <h2 class="carousel-title">Projets Personnels</h2>
+                    <div class="card card-body">
+                        <div class="projet">
+                            <h5 class="titre_projet">Créer un jeu 2D type dungeon scrowler avec Unity 6</h5>
+                            <div class="contenu_projet">
+                                <div class="texte_projet">
+                                    <p>
+                                        Depuis le 22 novembre 2025 et sur des heures personnelles, je créais un jeu 2D de type dungeon scrowler.
+                                        Le début a été réalisé en regardant un tuto Youtube (Tuto Unity FR) mais je continue à l'améliorer
+                                        personnellement <br />
+                                        <strong>Technologies</strong> : CSharp / C# (Unity). <br />
+                                        Lien GitHub : <a href="https://github.com/PierreBDL/Chroniques-du-Sceau-d-meraude" target="_blank">https://github.com/PierreBDL/Chroniques-du-Sceau-d-meraude</a>
+                                    </p>
+                                </div>
+                                <img src="../../Assets/Images/Projets/Unity_Logo.png" alt="Logo Unity">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <button class="btn btn-primary d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#Ynov">
-            <span class="me-2">Projets Ynov</span>
-            <i class="fa-solid fa-chevron-down"></i>
+        <!-- Contrôles du carousel -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#projetsCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Précédent</span>
         </button>
-
-        <div class="collapse mt-3" id="Ynov">
-            <div class="card card-body">
-                <h5 class="titre_ecole"> Bordeaux Ynov Campus </h5>
-                <div classe="projets_Ynov">
-                    <div class="projet">
-                        <h5 class="titre_projet">Premier Semestre, projet RED : Réaliser un RPG en CLI</h5>
-                        <div class="contenu_projet">
-                            <div class="texte_projet">
-                                <p>
-                                    Entre les jeudis 11 et 18 septembre, par groupe de deux, nous devions réaliser un jeu de type
-                                    RPG uniquement en CLI avec le langage Golang utilisé notamment par Google. <br />
-                                    <strong>Technologies</strong> : Golang. <br />
-                                    Lien GitHub : <a href="https://github.com/PierreBDL/Projet_Red_MY_SPELL_ACADEMIA" target="_blank">https://github.com/PierreBDL/Projet_Red_MY_SPELL_ACADEMIA</a>
-                                </p>
-                            </div>
-                            <img src="../../Assets/Images/Index/logo_ynov_campus.svg" alt="Logo Ynov">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        <button class="carousel-control-next" type="button" data-bs-target="#projetsCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Suivant</span>
+        </button>
     </div>
 
 </main>
@@ -225,5 +359,6 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../JavaScript/theme.js"></script>
 </body>
 </html>

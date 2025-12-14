@@ -2,7 +2,6 @@ html, body {
     padding: 0;
     margin: 0;
     font-family: "Segoe UI", Arial, sans-serif;
-    background-color: #f4f6f9;
 }
 
 /* Main */
@@ -12,39 +11,32 @@ main {
 
 /* Titre principal */
 .intro_main {
-    background: #e6f0ff;
     padding: 40px 20px;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     text-align: center;
     margin-bottom: 40px;
 }
 
 .intro_main h1 {
     font-size: 2rem;
-    color: #007bff;
     margin-bottom: 10px;
 }
 
 .intro_main p {
     font-size: 1.1rem;
-    color: #555;
 }
 
 /* Carte profil */
 #encadre {
-    background-color: #ffffff;
     border-radius: 12px;
     padding: 25px 30px;
     border: none;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
     margin-bottom: 40px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #encadre:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
 }
 
 .titre {
@@ -52,7 +44,6 @@ main {
     font-size: 1.8rem;
     font-weight: bold;
     margin-bottom: 30px;
-    color: #007bff;
 }
 
 .profil_columns {
@@ -79,20 +70,19 @@ main {
 
 .texte_profile i {
     margin-right: 8px;
-    color: #007bff;
+    color: var(--accent-color);
 }
 
 h1 {
     font-size: 2.2rem;
     text-align: center;
-    color: #333;
     font-weight: bold;
 }
 
 /* Bouton CV */
 .btn-cv {
     display: inline-block;
-    background-color: #007bff;
+    background-color: var(--accent-color);
     color: white;
     text-decoration: none;
     padding: 12px 24px;
@@ -108,32 +98,31 @@ h1 {
     box-shadow: 0 6px 20px rgba(0, 123, 255, 0.5);
 }
 
+[data-theme="dark"] .btn-cv:hover {
+    background-color: #357abd;
+}
+
 /* Formulaire de contact */
 #contact {
-    background-color: #ffffff;
     border-radius: 12px;
     border: none;
     padding: 40px 50px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #contact:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
 }
 
 #contact h2 {
     font-size: 2rem;
     font-weight: bold;
-    color: #007bff;
     margin-bottom: 10px;
     text-align: center;
 }
 
 #contact > p {
     font-size: 1.1rem;
-    color: #555;
     margin-bottom: 30px;
     text-align: center;
 }
@@ -148,7 +137,6 @@ form {
 label {
     margin-top: 15px;
     font-weight: 600;
-    color: #333;
     font-size: 1rem;
     margin-bottom: 8px;
 }
@@ -156,22 +144,21 @@ label {
 input, textarea {
     padding: 14px 18px;
     margin-top: 5px;
-    border: 2px solid #e0e0e0;
+    border: 2px solid var(--border-color);
     border-radius: 8px;
     font-family: inherit;
     font-size: 1rem;
     transition: all 0.3s ease;
-    background-color: #ffffff;
 }
 
 input:focus, textarea:focus {
     outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.1);
+    border-color: var(--accent-color);
 }
 
 input:hover, textarea:hover {
-    border-color: #80bdff;
+    border-color: var(--accent-color);
+    opacity: 0.8;
 }
 
 textarea {
@@ -181,7 +168,7 @@ textarea {
 
 #contact form button {
     margin-top: 30px;
-    background-color: #007bff;
+    background-color: var(--accent-color);
     color: white;
     border: none;
     padding: 16px 40px;
@@ -198,6 +185,10 @@ textarea {
     background-color: #0056b3;
     transform: translateY(-3px);
     box-shadow: 0 6px 25px rgba(0, 123, 255, 0.5);
+}
+
+[data-theme="dark"] #contact form button:hover {
+    background-color: #357abd;
 }
 
 #contact form button:active {
