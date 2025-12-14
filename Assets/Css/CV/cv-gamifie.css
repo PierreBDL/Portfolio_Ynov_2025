@@ -1,0 +1,655 @@
+/* ======================================
+   CV GAMIFIÉ - Style Jeu Vidéo
+   ====================================== */
+
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+main {
+    padding: 40px 10%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ======================================
+   SECTION HERO - Carte Joueur
+   ====================================== */
+
+.hero-section {
+    margin-bottom: 50px;
+}
+
+.player-card {
+    background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-intro) 100%);
+    border: 3px solid var(--accent-color);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 10px 30px var(--shadow-medium);
+    position: relative;
+    overflow: hidden;
+}
+
+.player-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(77, 166, 255, 0.1) 0%, transparent 70%);
+    animation: rotateGradient 10s linear infinite;
+}
+
+@keyframes rotateGradient {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.player-avatar {
+    width: 120px;
+    height: 120px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    color: white;
+    border: 5px solid var(--bg-card);
+    box-shadow: 0 5px 20px rgba(77, 166, 255, 0.4);
+    position: relative;
+    z-index: 1;
+}
+
+.player-name {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px var(--shadow-light);
+    position: relative;
+    z-index: 1;
+}
+
+.player-title {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.stat-item i {
+    font-size: 2rem;
+    color: var(--accent-color);
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.level-progress {
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.progress-bar-container {
+    height: 30px;
+    background: var(--bg-secondary);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px solid var(--border-color);
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4CAF50, #8BC34A);
+    border-radius: 15px;
+    transition: width 1s ease;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.6);
+    animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(76, 175, 80, 0.6);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(76, 175, 80, 0.9);
+    }
+}
+
+/* ======================================
+   SECTIONS GÉNÉRALES
+   ====================================== */
+
+.section-container {
+    background: var(--bg-card);
+    border: 2px solid var(--border-color);
+    border-radius: 15px;
+    padding: 35px;
+    margin-bottom: 40px;
+    box-shadow: 0 6px 20px var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px var(--shadow-medium);
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid var(--accent-color);
+}
+
+.section-title i {
+    font-size: 2.2rem;
+}
+
+/* ======================================
+   ARBRE DE COMPÉTENCES (Skills Tree)
+   ====================================== */
+
+.skills-tree {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.skill-branch {
+    background: var(--bg-intro);
+    border-radius: 12px;
+    padding: 25px;
+    border: 2px solid var(--accent-color);
+}
+
+.branch-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.skill-nodes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.skill-node {
+    width: 140px;
+    background: var(--bg-card);
+    border: 3px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.skill-node.unlocked {
+    border-color: #4CAF50;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.skill-node.unlocked::before {
+    content: '✓';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.skill-node:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 6px 20px var(--shadow-medium);
+}
+
+.skill-icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+}
+
+.skill-name {
+    display: block;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.skill-level {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    background: var(--bg-secondary);
+    padding: 4px 8px;
+    border-radius: 8px;
+}
+
+/* ======================================
+   SUCCÈS (Achievements)
+   ====================================== */
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.achievement {
+    background: var(--bg-intro);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: all 0.3s ease;
+}
+
+.achievement.unlocked {
+    border-color: #FFD700;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.achievement.unlocked:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5);
+}
+
+.achievement.locked {
+    opacity: 0.5;
+    filter: grayscale(100%);
+}
+
+.achievement-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    flex-shrink: 0;
+}
+
+.achievement.unlocked .achievement-icon {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+}
+
+.achievement-info h4 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--text-primary);
+    margin-bottom: 5px;
+}
+
+.achievement-info p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+.achievement-date {
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+/* ======================================
+   TIMELINE DE QUÊTES
+   ====================================== */
+
+.quest-timeline {
+    position: relative;
+    padding-left: 40px;
+}
+
+.quest-timeline::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--border-color);
+}
+
+.quest-item {
+    position: relative;
+    margin-bottom: 30px;
+    padding-left: 30px;
+}
+
+.quest-marker {
+    position: absolute;
+    left: -25px;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    background: var(--bg-secondary);
+    border: 4px solid var(--border-color);
+    border-radius: 50%;
+}
+
+.quest-item.completed .quest-marker {
+    background: #4CAF50;
+    border-color: #4CAF50;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.6);
+}
+
+.quest-item.active .quest-marker {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 10px rgba(77, 166, 255, 0.6);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.quest-item.future .quest-marker {
+    background: var(--bg-secondary);
+    border-color: var(--border-color);
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(77, 166, 255, 0.6);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(77, 166, 255, 1);
+    }
+}
+
+.quest-content {
+    background: var(--bg-intro);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.quest-item.completed .quest-content {
+    border-color: #4CAF50;
+}
+
+.quest-item.active .quest-content {
+    border-color: var(--accent-color);
+    box-shadow: 0 4px 15px rgba(77, 166, 255, 0.3);
+}
+
+.quest-content:hover {
+    transform: translateX(5px);
+}
+
+.quest-content h4 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+.quest-description {
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.quest-rewards {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.reward-badge {
+    background: var(--accent-color);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.reward-badge.active {
+    background: #FF9800;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.reward-badge.locked {
+    background: var(--text-secondary);
+}
+
+.quest-date {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* ======================================
+   SECTION TÉLÉCHARGEMENT
+   ====================================== */
+
+.download-section {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.btn-download {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--accent-color), #357abd);
+    color: white;
+    text-decoration: none;
+    padding: 15px 40px;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(77, 166, 255, 0.4);
+}
+
+.btn-download:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(77, 166, 255, 0.6);
+    color: white;
+}
+
+.btn-download i {
+    margin-right: 10px;
+}
+
+/* ======================================
+   RESPONSIVE DESIGN
+   ====================================== */
+
+/* Tablette */
+@media (max-width: 992px) {
+    main {
+        padding: 30px 5%;
+    }
+    
+    .player-card {
+        padding: 30px 20px;
+    }
+    
+    .player-name {
+        font-size: 2rem;
+    }
+    
+    .stats-container {
+        gap: 30px;
+    }
+    
+    .section-container {
+        padding: 25px;
+    }
+    
+    .section-title {
+        font-size: 1.7rem;
+    }
+    
+    .achievements-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    main {
+        padding: 20px 4%;
+    }
+    
+    .player-card {
+        padding: 25px 15px;
+    }
+    
+    .player-avatar {
+        width: 100px;
+        height: 100px;
+        font-size: 50px;
+    }
+    
+    .player-name {
+        font-size: 1.6rem;
+    }
+    
+    .player-title {
+        font-size: 1.1rem;
+    }
+    
+    .stats-container {
+        gap: 20px;
+    }
+    
+    .stat-value {
+        font-size: 1.6rem;
+    }
+    
+    .section-container {
+        padding: 20px;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+        gap: 10px;
+    }
+    
+    .skill-nodes {
+        gap: 15px;
+    }
+    
+    .skill-node {
+        width: 120px;
+        padding: 15px 10px;
+    }
+    
+    .skill-icon {
+        font-size: 2.5rem;
+    }
+    
+    .achievements-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .achievement {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .quest-timeline {
+        padding-left: 30px;
+    }
+    
+    .quest-content h4 {
+        font-size: 1.1rem;
+    }
+    
+    .btn-download {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+}
+
+/* Très petits écrans */
+@media (max-width: 480px) {
+    .player-name {
+        font-size: 1.4rem;
+    }
+    
+    .stats-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .skill-node {
+        width: 100px;
+    }
+    
+    .skill-icon {
+        font-size: 2rem;
+    }
+}

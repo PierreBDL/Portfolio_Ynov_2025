@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        // Appliquer le thème immédiatement pour éviter le flash
+        (function() {
+            const theme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../Css/Commun/theme.css">
+    <link rel="stylesheet" href="../Css/Commun/animations.css">
+    <link rel="stylesheet" href="../Css/Commun/compteur.css">
+    <link rel="stylesheet" href="../Css/CV/cv-gamifie.css">
+    <link rel="stylesheet" href="../../Assets/Css/Commun/Footer/footer.css">
+    <title>CV Gamifié - Pierre BOURGEOIS DE LAVERGNE</title>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../../index.html">Pierre BOURGEOIS DE LAVERGNE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../../index.html">À propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./competences.html">Compétences</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./projets.html">Projets</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./contact.html">Contacts</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="./cv-gamifie.html">CV Gamifié</a></li>
+                    <li class="nav-item">
+                        <button id="theme-toggle" class="ms-2">
+                            <i id="theme-icon" class="fa-solid fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <!-- Section Hero avec stats -->
+    <div class="hero-section">
+        <div class="player-card">
+            <div class="player-avatar">
+                <i class="fas fa-user-graduate"></i>
+            </div>
+            <h1 class="player-name">Pierre BOURGEOIS DE LAVERGNE</h1>
+            <p class="player-title">Développeur Web - Niveau 2</p>
+            
+            <div class="stats-container">
+                <div class="stat-item">
+                    <i class="fas fa-star"></i>
+                    <span class="stat-value" id="totalXP">1250</span>
+                    <span class="stat-label">XP Total</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-trophy"></i>
+                    <span class="stat-value" id="achievements">12</span>
+                    <span class="stat-label">Succès</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-code"></i>
+                    <span class="stat-value" id="projectsCompleted">10</span>
+                    <span class="stat-label">Projets</span>
+                </div>
+            </div>
+            
+            <div class="level-progress">
+                <div class="progress-info">
+                    <span>Niveau 2</span>
+                    <span>250/1500 XP</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill" style="width: 17%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section Compétences (Skills Tree) -->
+    <div class="section-container">
+        <h2 class="section-title">
+            <i class="fas fa-brain"></i> Arbre de Compétences
+        </h2>
+        
+        <div class="skills-tree">
+            <div class="skill-branch">
+                <h3 class="branch-title">Front-End</h3>
+                <div class="skill-nodes">
+                    <div class="skill-node unlocked" data-skill="HTML">
+                        <div class="skill-icon"><i class="fab fa-html5"></i></div>
+                        <span class="skill-name">HTML</span>
+                        <div class="skill-level">Niveau 5</div>
+                    </div>
+                    <div class="skill-node unlocked" data-skill="CSS">
+                        <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+                        <span class="skill-name">CSS</span>
+                        <div class="skill-level">Niveau 5</div>
+                    </div>
+                    <div class="skill-node unlocked" data-skill="JavaScript">
+                        <div class="skill-icon"><i class="fab fa-js"></i></div>
+                        <span class="skill-name">JavaScript</span>
+                        <div class="skill-level">Niveau 4</div>
+                    </div>
+                    <div class="skill-node unlocked" data-skill="Bootstrap">
+                        <div class="skill-icon"><i class="fab fa-bootstrap"></i></div>
+                        <span class="skill-name">Bootstrap</span>
+                        <div class="skill-level">Niveau 4</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-branch">
+                <h3 class="branch-title">Back-End</h3>
+                <div class="skill-nodes">
+                    <div class="skill-node unlocked" data-skill="PHP">
+                        <div class="skill-icon"><i class="fab fa-php"></i></div>
+                        <span class="skill-name">PHP</span>
+                        <div class="skill-level">Niveau 3</div>
+                    </div>
+                    <div class="skill-node unlocked" data-skill="MySQL">
+                        <div class="skill-icon"><i class="fas fa-database"></i></div>
+                        <span class="skill-name">MySQL</span>
+                        <div class="skill-level">Niveau 3</div>
+                    </div>
+                    <div class="skill-node unlocked" data-skill="Golang">
+                        <div class="skill-icon"><i class="fas fa-code"></i></div>
+                        <span class="skill-name">Golang</span>
+                        <div class="skill-level">Niveau 4</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-branch">
+                <h3 class="branch-title">Autres</h3>
+                <div class="skill-nodes">
+                    <div class="skill-node unlocked" data-skill="Python">
+                        <div class="skill-icon"><i class="fab fa-python"></i></div>
+                        <span class="skill-name">Python</span>
+                        <div class="skill-level">Niveau 3</div>
+                    </div>
+                    <div class="skill-node unlocked" data-skill="C++">
+                        <div class="skill-icon"><i class="fas fa-code"></i></div>
+                        <span class="skill-name">C++</span>
+                        <div class="skill-level">Niveau 2</div>
+                    </div>
+                    <div class="skill-node unlocked" data-skill="C#">
+                        <div class="skill-icon"><i class="fas fa-gamepad"></i></div>
+                        <span class="skill-name">C# Unity</span>
+                        <div class="skill-level">Niveau 2</div>
+                    </div>
+                    <div class="skill-node unlocked" data-skill="Git">
+                        <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
+                        <span class="skill-name">Git</span>
+                        <div class="skill-level">Niveau 4</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section Succès (Achievements) -->
+    <div class="section-container">
+        <h2 class="section-title">
+            <i class="fas fa-award"></i> Succès Débloqués
+        </h2>
+        
+        <div class="achievements-grid">
+            <div class="achievement unlocked">
+                <div class="achievement-icon"><i class="fas fa-graduation-cap"></i></div>
+                <div class="achievement-info">
+                    <h4>Diplômé STI2D</h4>
+                    <p>Obtenir le Bac STI2D spé. SIN</p>
+                    <span class="achievement-date">Août 2024</span>
+                </div>
+            </div>
+
+            <div class="achievement unlocked">
+                <div class="achievement-icon"><i class="fas fa-school"></i></div>
+                <div class="achievement-info">
+                    <h4>Étudiant ESIEA</h4>
+                    <p>Intégrer l'ESIEA en filière Expert</p>
+                    <span class="achievement-date">2024-2025</span>
+                </div>
+            </div>
+
+            <div class="achievement unlocked">
+                <div class="achievement-icon"><i class="fas fa-globe"></i></div>
+                <div class="achievement-info">
+                    <h4>Premier Site Web</h4>
+                    <p>Créer un site web statique complet</p>
+                    <span class="achievement-date">+100 XP</span>
+                </div>
+            </div>
+
+            <div class="achievement unlocked">
+                <div class="achievement-icon"><i class="fas fa-database"></i></div>
+                <div class="achievement-info">
+                    <h4>Maître des Données</h4>
+                    <p>Implémenter une base de données MySQL</p>
+                    <span class="achievement-date">+150 XP</span>
+                </div>
+            </div>
+
+            <div class="achievement unlocked">
+                <div class="achievement-icon"><i class="fas fa-server"></i></div>
+                <div class="achievement-info">
+                    <h4>Administrateur Serveur</h4>
+                    <p>Héberger un site avec LAMP</p>
+                    <span class="achievement-date">+100 XP</span>
+                </div>
+            </div>
+
+            <div class="achievement unlocked">
+                <div class="achievement-icon"><i class="fas fa-users"></i></div>
+                <div class="achievement-info">
+                    <h4>Chef de Projet</h4>
+                    <p>Diriger un groupe de 3 personnes</p>
+                    <span class="achievement-date">+120 XP</span>
+                </div>
+            </div>
+
+            <div class="achievement unlocked">
+                <div class="achievement-icon"><i class="fas fa-university"></i></div>
+                <div class="achievement-info">
+                    <h4>Étudiant Ynov</h4>
+                    <p>Intégrer Bordeaux Ynov Campus</p>
+                    <span class="achievement-date">Septembre 2025</span>
+                </div>
+            </div>
+
+            <div class="achievement unlocked">
+                <div class="achievement-icon"><i class="fas fa-gamepad"></i></div>
+                <div class="achievement-info">
+                    <h4>Créateur de Jeux</h4>
+                    <p>Réaliser un RPG en CLI avec Golang</p>
+                    <span class="achievement-date">+200 XP</span>
+                </div>
+            </div>
+
+            <div class="achievement unlocked">
+                <div class="achievement-icon"><i class="fas fa-puzzle-piece"></i></div>
+                <div class="achievement-info">
+                    <h4>Maître du Puissance 4</h4>
+                    <p>Créer un jeu Puissance 4 en ligne</p>
+                    <span class="achievement-date">+180 XP</span>
+                </div>
+            </div>
+
+            <div class="achievement unlocked">
+                <div class="achievement-icon"><i class="fas fa-music"></i></div>
+                <div class="achievement-info">
+                    <h4>Tracker de Groupes</h4>
+                    <p>Connecter une API de groupes musicaux</p>
+                    <span class="achievement-date">+200 XP</span>
+                </div>
+            </div>
+
+            <div class="achievement locked">
+                <div class="achievement-icon"><i class="fas fa-briefcase"></i></div>
+                <div class="achievement-info">
+                    <h4>Premier Stage</h4>
+                    <p>Réaliser un stage en entreprise</p>
+                    <span class="achievement-date">Verrouillé</span>
+                </div>
+            </div>
+
+            <div class="achievement locked">
+                <div class="achievement-icon"><i class="fas fa-rocket"></i></div>
+                <div class="achievement-info">
+                    <h4>Projet Majeur</h4>
+                    <p>Finaliser un projet de grande envergure</p>
+                    <span class="achievement-date">Verrouillé</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section Quêtes (Parcours Scolaire) -->
+    <div class="section-container">
+        <h2 class="section-title">
+            <i class="fas fa-map-marked-alt"></i> Parcours & Quêtes
+        </h2>
+        
+        <div class="quest-timeline">
+            <div class="quest-item completed">
+                <div class="quest-marker"></div>
+                <div class="quest-content">
+                    <h4>Lycée Jean-Baptiste de Baudre</h4>
+                    <p class="quest-description">Bac STI2D spé. SIN - Apprentissage C++ et Python</p>
+                    <div class="quest-rewards">
+                        <span class="reward-badge"><i class="fas fa-star"></i> +300 XP</span>
+                        <span class="quest-date">2020-2024</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quest-item completed">
+                <div class="quest-marker"></div>
+                <div class="quest-content">
+                    <h4>ESIEA Campus Agen</h4>
+                    <p class="quest-description">Filière Expert - HTML, CSS, JS, PHP, MySQL</p>
+                    <div class="quest-rewards">
+                        <span class="reward-badge"><i class="fas fa-star"></i> +500 XP</span>
+                        <span class="quest-date">2024-2025</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quest-item active">
+                <div class="quest-marker"></div>
+                <div class="quest-content">
+                    <h4>Bordeaux Ynov Campus</h4>
+                    <p class="quest-description">Filière Informatique - Spécialisation Golang</p>
+                    <div class="quest-rewards">
+                        <span class="reward-badge active"><i class="fas fa-hourglass-half"></i> En cours</span>
+                        <span class="quest-date">Depuis Sept. 2025</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quest-item future">
+                <div class="quest-marker"></div>
+                <div class="quest-content">
+                    <h4>Quête Suivante</h4>
+                    <p class="quest-description">Stage en entreprise et projets avancés</p>
+                    <div class="quest-rewards">
+                        <span class="reward-badge locked"><i class="fas fa-lock"></i> À venir</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bouton pour télécharger le CV traditionnel -->
+    <div class="download-section">
+        <a href="../../Assets/Fichiers/CV/" class="btn-download" download>
+            <i class="fas fa-file-pdf"></i> Télécharger le CV Traditionnel
+        </a>
+    </div>
+</main>
+
+<footer class="bg-primary text-white text-center text-lg-start mt-5">
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                <h5 class="text-uppercase fw-bold">Pierre Bourgeois de Lavergne</h5>
+                <p>
+                    Étudiant en développement web.
+                </p>
+            </div>
+
+            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                <h5 class="text-uppercase fw-bold">Me contacter</h5>
+                <ul class="list-unstyled">
+                    <li><i class="fa-solid fa-envelope"></i> <a href="mailto:pierre.bourgeoisdelavergne@ynov.com" id="courriel">pierre.bourgeoisdelavergne@ynov.com</a></li>
+                    <li><i class="fa-solid fa-phone"></i> +33 7 69 88 62 47</li>
+                    <li><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/pierre-bourgeois-de-lavergne-525a3b335" target="_blank" class="text-white text-decoration-none">LinkedIn</a></li>
+                    <li><i class="fa-brands fa-github"></i> <a href="https://github.com/PierreBDL" target="_blank" class="text-white text-decoration-none">GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center p-3 bg-dark">
+        © 2025 Portfolio - Tous droits réservés
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../JavaScript/theme.js"></script>
+<script src="../JavaScript/animations.js"></script>
+<script src="../JavaScript/compteur.js"></script>
+<script src="../JavaScript/cv-gamifie.js"></script>
+</body>
+</html>
