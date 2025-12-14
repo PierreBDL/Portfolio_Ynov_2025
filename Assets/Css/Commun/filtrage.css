@@ -1,0 +1,264 @@
+/* ======================================
+   SYSTÈME DE FILTRAGE DES PROJETS
+   ====================================== */
+
+.filter-container {
+    margin: 30px 0;
+    padding: 0;
+}
+
+.filter-section {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 25px 30px;
+    box-shadow: 0 4px 12px var(--shadow-light);
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s ease;
+}
+
+.filter-section:hover {
+    box-shadow: 0 6px 16px var(--shadow-medium);
+}
+
+.filter-section h3 {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter-section h3 i {
+    font-size: 1.3rem;
+}
+
+.filter-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.filter-group label {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.filter-group label i {
+    color: var(--accent-color);
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-btn {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 2px solid var(--border-color);
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.filter-btn:hover {
+    background: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-medium);
+}
+
+.filter-btn.active {
+    background: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+    box-shadow: 0 2px 6px var(--shadow-medium);
+}
+
+.filter-btn.active:hover {
+    background: var(--accent-color);
+    opacity: 0.9;
+}
+
+.reset-filters-btn {
+    background: transparent;
+    color: var(--text-secondary);
+    border: 2px solid var(--border-color);
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 auto;
+}
+
+.reset-filters-btn:hover {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+    transform: scale(1.05);
+}
+
+.reset-filters-btn i {
+    transition: transform 0.3s ease;
+}
+
+.reset-filters-btn:hover i {
+    transform: rotate(360deg);
+}
+
+.filter-results {
+    background: var(--bg-intro);
+    border-radius: 8px;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+.filter-results p {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+/* Adaptation pour le mode sombre */
+[data-theme="dark"] .filter-section {
+    background: var(--bg-card);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .filter-btn {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .filter-btn:hover {
+    background: var(--accent-color);
+    color: white;
+}
+
+[data-theme="dark"] .filter-btn.active {
+    background: var(--accent-color);
+    color: white;
+}
+
+[data-theme="dark"] .reset-filters-btn {
+    color: var(--text-secondary);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .reset-filters-btn:hover {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+[data-theme="dark"] .filter-results {
+    background: var(--bg-intro);
+}
+
+/* Responsive Design - Tablette */
+@media (max-width: 992px) {
+    .filter-section {
+        padding: 20px;
+    }
+    
+    .filter-section h3 {
+        font-size: 1.3rem;
+    }
+    
+    .filter-group label {
+        font-size: 1rem;
+    }
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 768px) {
+    .filter-container {
+        margin: 20px 0;
+    }
+    
+    .filter-section {
+        padding: 15px;
+    }
+    
+    .filter-section h3 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+    
+    .filter-groups {
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .filter-group {
+        gap: 10px;
+    }
+    
+    .filter-group label {
+        font-size: 0.95rem;
+    }
+    
+    .filter-buttons {
+        gap: 8px;
+    }
+    
+    .filter-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .reset-filters-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .filter-results {
+        padding: 12px 15px;
+    }
+    
+    .filter-results p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Très petits écrans */
+@media (max-width: 480px) {
+    .filter-buttons {
+        flex-direction: column;
+    }
+    
+    .filter-btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .reset-filters-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
