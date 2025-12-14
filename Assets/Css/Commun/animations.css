@@ -1,0 +1,140 @@
+/* ======================================
+   ANIMATIONS DE FONDU (Style Canva)
+   ====================================== */
+
+/* État initial des éléments (invisibles) */
+.fade-in-element {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* État visible des éléments (animés) */
+.fade-in-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Variantes d'animation pour plus de dynamisme */
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-left.fade-in-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-right.fade-in-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.fade-in-scale {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-scale.fade-in-visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Animation avec délai pour créer un effet en cascade */
+.fade-in-delay-1 {
+    transition-delay: 0.1s;
+}
+
+.fade-in-delay-2 {
+    transition-delay: 0.2s;
+}
+
+.fade-in-delay-3 {
+    transition-delay: 0.3s;
+}
+
+.fade-in-delay-4 {
+    transition-delay: 0.4s;
+}
+
+/* Animation pour les cartes */
+.card.fade-in-element {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.card.fade-in-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Préserver l'animation hover des cartes */
+.card.fade-in-visible:hover {
+    transform: translateY(-5px) scale(1);
+}
+
+/* Animation spéciale pour les titres principaux */
+.carousel-title-main.fade-in-element {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.carousel-title-main.fade-in-visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* S'assurer que les éléments du carousel ne s'animent que quand ils sont actifs */
+.carousel-item:not(.active) .fade-in-element {
+    opacity: 0;
+}
+
+.carousel-item.active .fade-in-element {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation pour les éléments de liste */
+.skill-category.fade-in-element,
+.contact-section.fade-in-element {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* Réduire le mouvement pour les utilisateurs qui préfèrent */
+@media (prefers-reduced-motion: reduce) {
+    .fade-in-element,
+    .fade-in-left,
+    .fade-in-right,
+    .fade-in-scale {
+        opacity: 0;
+        transform: none;
+        transition: opacity 0.3s ease;
+    }
+    
+    .fade-in-visible {
+        opacity: 1;
+        transform: none;
+    }
+}
